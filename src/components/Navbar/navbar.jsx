@@ -2,34 +2,41 @@
 import React from 'react'
 import { Link, useLocation } from "react-router-dom";
 
+import './navbar.css'
+
 
 //component inputs
 
 //asset imports
-import Logo from '../../assets/images/logo/logo.png'
+import Logo from '../../assets/images/logo/5ense-logo.png'
 import UserIcon from '../Icons/UserIcon.jsx';
 
 const Navbar = () => {
   return (
-    <div className='navbar-container'>
-        <div className="nav-left">
-          <UserIcon size={20} color='white' />
-          <button className="pill-btn">THE FRIEND</button>
-        </div>
+    <nav className="flex items-center justify-between px-50 text-white">
+      
+      {/* LEFT */}
+      <div className="flex items-center justify-between gap-4">
+        <UserIcon size={20} color="white" />
 
-        <div className="nav-middle">
-          <a href="">About</a>
-          <a href="">Connect</a>
-        </div>
+        <button className="border border-white px-4 py-2 rounded-full text-sm tracking-wide ">
+          THE FRIEND
+        </button>
+      </div>
 
-        <div className="nav-right">
-          <Link to='/'>
-          <img src={Logo} alt="5ense Studios Logo Placeholder" className='' />
-          </Link>
-        </div>
+      {/* MIDDLE */}
+      <div className="flex items-center justify-between gap-8 text-sm tracking-wide">
+        <a href="#about" className="hover:opacity-70 transition">ABOUT</a>
+        <a href="#connect" className="hover:opacity-70 transition">CONNECT</a>
+      </div>
 
-    </div>
-  )
-}
+      {/* RIGHT */}
+      <div className="flex items-center justify-between  w-40">
+      <img src={Logo} alt="5ense Studio Logo" />
+      </div>
 
-export default Navbar
+    </nav>
+  );
+};
+
+export default Navbar;
